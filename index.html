@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Happy Birthday my Yanyan</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="space"/><span class="comments">// We are both USC Trojans,</span><br />
+				<span class="space"/><span class="comments">// It's the first time for us to celebrate your birthday together.</span><br />
+				<!--<span class="space"/><span class="comments">*/</span><br />-->
+				<span class="comments">// Feb 14 2017, I told you I love you. </span><br />
+				<span class="comments">// Luckily, you accepted and became my girlfriend eversince.</span><br />
+				<span class="comments">// Since then, you are my shirley every day.</span><br />
+				<span class="comments">// And I take care of u and our love.</span><br />
+				<<致橡树>> <br />
+				我如果爱你——绝不像攀援的凌霄花,借你的高枝炫耀自己;<br />
+				我如果爱你——绝不学痴情的鸟儿,为绿荫重复单调的歌曲;<br />
+				也不止像泉源,常年送来清凉的慰籍;<br />
+				也不止像险峰,增加你的高度,衬托你的威仪.<br />
+				甚至日光,甚至春雨.<br />
+				不,这些都还不够!<br />
+				我必须是你近旁的一株木棉,<br />
+				做为树的形象和你站在一起.<br />
+				根,紧握在地下;<br />
+				叶,相触在云里.<br />
+				每一阵风过,我们都互相致意,但没有人,听懂我们的言语,<br />
+				你有你的铜枝铁干,<br />
+				像刀,像剑,也像戟,<br />
+				我有我的红硕花朵,<br />
+				像沉重的叹息,又像英勇的火炬,<br />
+				我们分担寒潮、风雷、霹雳;<br />
+				我们共享雾霭、流岚、虹霓;<br />
+				仿佛永远分离,却又终身相依,<br />
+				这才是伟大的爱情,<br />
+				坚贞就在这里:<br />
+				不仅爱你伟岸的身躯,<br />
+				也爱你坚持的位置,脚下的土地.<br />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						Qiuyan Sun, I have fallen in love with you for
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						Love u forever and ever.<br/>
+						<div class="signature">- Runyou Wang</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+			Inspired by <a href="http://www.openrise.com/lab/FlowerPower/">FlowerPower</a> project.<br />
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2017, 2, 14);
+		together.setHours(20);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
